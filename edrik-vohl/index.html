@@ -591,6 +591,19 @@ section{scroll-margin-top:calc(var(--nav-h) + 16px);position:relative}
 .foot .sample{margin-top:8px;letter-spacing:.04em;font-size:11px;color:#5A524A}
 .foot .sample a{color:inherit;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 .foot .sample a:hover,.foot .sample a:focus-visible{color:var(--gold)}
+/* VIEW SITES */
+.sites-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:36px;padding:0 16px;
+  border:2px solid rgba(240,192,132,.45);
+  color:var(--gold);
+  font-family:var(--poster);font-size:11px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+  clip-path:polygon(.6% 3%, 100% 0, 99.2% 96%, 0 100%);
+  transition:background .2s, color .2s, border-color .2s;
+}
+.sites-btn:hover,.sites-btn:focus-visible{background:var(--ember);border-color:var(--ember);color:#140C08}
+.nav>nav{margin-left:auto;margin-right:28px}
 
 @media (max-width:799px){
   .nav{
@@ -600,6 +613,9 @@ section{scroll-margin-top:calc(var(--nav-h) + 16px);position:relative}
     gap:10px;
     padding:14px 16px 12px;
   }
+  .nav{flex-direction:row;flex-wrap:wrap;justify-content:space-between;row-gap:10px}
+  .nav>nav{order:3;width:100%;display:flex;justify-content:center;margin:0}
+  .sites-btn{min-height:32px;padding:0 12px;font-size:10px}
   .nav-links{gap:16px;flex-wrap:wrap;justify-content:center}
   .nav-links a{font-size:11px;letter-spacing:.12em}
   .hero{min-height:0;padding:36px 0 64px}
@@ -639,6 +655,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 16px);position:relative}
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+  <a class="sites-btn" href="/">View Sites</a>
 </header>
 <main id="main">
   <section class="hero" id="top">

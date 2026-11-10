@@ -465,6 +465,19 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
 }
 .foot .sample a{color:inherit;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 .foot .sample a:hover,.foot .sample a:focus-visible{color:var(--root-deep)}
+/* VIEW SITES */
+.sites-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:36px;padding:2px 16px 0;
+  border:1px solid rgba(55,38,31,.35);
+  color:var(--root-deep);
+  font-family:var(--display);font-size:11px;font-weight:400;
+  letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.sites-btn:hover,.sites-btn:focus-visible{background:var(--root-deep);border-color:var(--root-deep);color:#F7F4F0}
+.nav>nav{margin-left:auto;margin-right:28px}
+
 @media (max-width:799px){
   .nav{
     height:auto;
@@ -473,6 +486,9 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
     gap:10px;
     padding:14px 16px 12px;
   }
+  .nav{flex-direction:row;flex-wrap:wrap;justify-content:space-between;row-gap:10px}
+  .nav>nav{order:3;width:100%;display:flex;justify-content:center;margin:0}
+  .sites-btn{min-height:32px;padding:2px 12px 0;font-size:10px}
   .nav-links{gap:16px;flex-wrap:wrap;justify-content:center}
   .nav-links a{font-size:11px;letter-spacing:.12em}
   .hero{min-height:0;padding:32px 0 56px}
@@ -507,6 +523,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+  <a class="sites-btn" href="/">View Sites</a>
 </header>
 <main id="main">
   <section class="hero" id="top">
