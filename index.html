@@ -108,6 +108,30 @@ footer{
   letter-spacing:.06em;
   color:rgba(247,245,240,.45);
 }
+.offer{
+  display:grid;gap:18px;align-items:center;
+  margin-bottom:40px;
+  padding:24px 22px;
+  background:#111112;
+  border:1px solid rgba(247,245,240,.1);
+  border-left:3px solid #FF003C;
+}
+.offer .kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#FF003C;font-weight:500;margin-bottom:6px}
+.offer h2{margin:0 0 8px;font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:34px;letter-spacing:.04em;line-height:1}
+.offer h2 .price{color:#FF003C}
+.offer p{font-size:14px;font-weight:300;color:rgba(247,245,240,.72);max-width:44ch}
+.offer-btn{
+  display:inline-flex;align-items:center;justify-content:center;justify-self:start;
+  min-height:46px;padding:0 24px;
+  background:#FF003C;color:#F7F5F0;
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+  white-space:nowrap;transition:background .2s;
+}
+.offer-btn:hover,.offer-btn:focus-visible{background:#D60033}
+@media (min-width:800px){
+  .offer{grid-template-columns:1fr auto;gap:28px;padding:28px 32px}
+  .offer-btn{justify-self:end}
+}
 @media (min-width:800px){
   .page{padding:48px 0 36px}
   .wrap{width:min(960px, calc(100% - 80px))}
@@ -142,6 +166,14 @@ footer{
           </div>
         </a>
       </div>
+      <section class="offer" aria-labelledby="offer-title">
+        <div>
+          <div class="kicker">Artist website package</div>
+          <h2 id="offer-title">Your own artist site · <span class="price">$150</span></h2>
+          <p>Includes your own domain. Hosting is included too, so there are no hosting fees.</p>
+        </div>
+        <a class="offer-btn" href="https://www.premadepixels.com/contact">Get your site</a>
+      </section>
       <p><a class="cta" href="https://www.premadepixels.com/custom-album-cover-art">Get a cover + matching site</a></p>
       <footer>PremadePixels · Sample sites</footer>
     </div>

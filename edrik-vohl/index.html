@@ -580,6 +580,24 @@ section{scroll-margin-top:calc(var(--nav-h) + 16px);position:relative}
 .contact .btn{justify-self:start;margin-top:6px}
 .form-row{display:grid;gap:12px}
 
+/* PACKAGE STRIP */
+.pkg{background:#0E0A08;border-top:1px solid rgba(232,120,34,.28);padding:22px 0}
+.pkg-inner{display:flex;align-items:center;justify-content:center;gap:24px}
+.pkg p{font-family:var(--stamp);font-size:13px;letter-spacing:.04em;color:var(--text);margin:0}
+.pkg strong{color:var(--ember);font-weight:400}
+.pkg-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:40px;padding:0 18px;
+  border:2px solid var(--ember);background:var(--ember);color:#140C08;
+  font-family:var(--poster);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+  clip-path:polygon(.6% 3%, 100% 0, 99.2% 96%, 0 100%);
+  transition:background .2s, border-color .2s;
+}
+.pkg-btn:hover,.pkg-btn:focus-visible{background:var(--ember-hot);border-color:var(--ember-hot)}
+@media (max-width:799px){
+  .pkg-inner{flex-direction:column;text-align:center;gap:14px}
+}
+
 /* FOOTER */
 .foot{
   padding:28px 0 32px;
@@ -863,6 +881,12 @@ section{scroll-margin-top:calc(var(--nav-h) + 16px);position:relative}
   </section>
   <div class="rip rip-to-foot" aria-hidden="true"><svg class="rip-svg" viewBox="0 0 1440 40" preserveAspectRatio="none" width="1440" height="40" aria-hidden="true"><path d="M0 22 L16 6 L28 30 L44 2 L58 24 L74 0 L90 28 L104 8 L122 34 L140 3 L156 20 L176 0 L196 26 L214 7 L236 33 L258 4 L276 22 L298 1 L322 29 L344 9 L368 2 L390 27 L412 6 L438 32 L460 4 L486 20 L508 0 L532 26 L556 8 L580 30 L608 3 L634 21 L662 0 L690 28 L714 8 L746 33 L776 4 L806 22 L836 0 L866 29 L896 7 L926 20 L956 2 L986 31 L1018 6 L1048 23 L1078 1 L1108 27 L1138 8 L1168 32 L1198 4 L1228 19 L1258 0 L1288 26 L1318 7 L1348 30 L1374 5 L1402 22 L1422 2 L1440 24 L1440 40 L0 40 Z"/></svg></div>
 </main>
+<aside class="pkg" aria-label="Artist website package">
+  <div class="wrap pkg-inner">
+    <p>Like this site? Get your own artist website for <strong>$150</strong>, domain and hosting included.</p>
+    <a class="pkg-btn" href="https://www.premadepixels.com/contact">Get your site</a>
+  </div>
+</aside>
 <footer class="foot">
   <div class="wrap">
     <p>Edrik Vohl · After the Fall</p>

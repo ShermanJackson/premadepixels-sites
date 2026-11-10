@@ -441,6 +441,22 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
 .contact textarea{min-height:140px;resize:vertical;line-height:1.5}
 .contact .btn{justify-self:center;margin-top:8px}
 .form-row{display:grid;gap:14px}
+/* PACKAGE STRIP */
+.pkg{background:var(--blush);border-top:1px solid var(--line);padding:24px 0}
+.pkg-inner{display:flex;align-items:center;justify-content:center;gap:24px}
+.pkg p{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--ink);margin:0;line-height:1.4}
+.pkg strong{font-style:normal;font-weight:600;color:var(--root-deep)}
+.pkg-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:40px;padding:2px 20px 0;
+  border:1px solid var(--root-deep);background:var(--root-deep);color:#F7F4F0;
+  font-family:var(--display);font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;
+  transition:background .2s, border-color .2s;
+}
+.pkg-btn:hover,.pkg-btn:focus-visible{background:#2A1C18;border-color:#2A1C18}
+@media (max-width:799px){
+  .pkg-inner{flex-direction:column;text-align:center;gap:14px}
+}
 /* FOOTER */
 .foot{
   padding:32px 0 36px;
@@ -711,6 +727,12 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
     </div>
   </section>
 </main>
+<aside class="pkg" aria-label="Artist website package">
+  <div class="wrap pkg-inner">
+    <p>Like this site? Get your own artist website for <strong>$150</strong>, domain and hosting included.</p>
+    <a class="pkg-btn" href="https://www.premadepixels.com/contact">Get your site</a>
+  </div>
+</aside>
 <footer class="foot">
   <div class="wrap">
     <p>Ione Merroway · Rooted In Him</p>
