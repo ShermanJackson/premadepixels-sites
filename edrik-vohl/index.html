@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edrik Vohl — After the Fall</title>
+<meta name="description" content="Sample artist site by PremadePixels. Fictional artist Edrik Vohl and the album After the Fall, designed from the After Humanity cover.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Outfit",system-ui,sans-serif;
+  background:#070605;
+  color:#F3EBE0;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:clip;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,h3,p,ul,ol,figure,blockquote{margin:0}
+:root{
+  --bg:#070605;
+  --bg-2:#0C0908;
+  --surface:#14100C;
+  --line:#2C241C;
+  --ember:#E87822;
+  --ember-hot:#FF9A1A;
+  --rust:#8F502D;
+  --gold:#F0C084;
+  --gold-soft:#FCD8B4;
+  --text:#F3EBE0;
+  --muted:#9A8A7A;
+  --muted-2:#6E6258;
+  --spot:#1DB954;
+  --apple:#FA2D48;
+  --nav-h:64px;
+  --display:"Cinzel","Times New Roman",serif;
+  --sans:"Outfit",system-ui,sans-serif;
+  --max:1160px;
+}
+.skip{position:absolute;left:-999px;top:0}
+.skip:focus{left:16px;top:16px;background:#F3EBE0;color:#070605;padding:8px 12px;z-index:100;border-radius:2px}
+/* grain */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;
+  z-index:80;
+  opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
+}
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:40;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;
+  background:rgba(7,6,5,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(240,192,132,.12);
+}
+.brand{
+  font-family:var(--display);
+  font-weight:600;
+  letter-spacing:.18em;
+  font-size:11px;
+  text-transform:uppercase;
+  color:var(--gold);
+  white-space:nowrap;
+}
+.nav-links{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+.nav-links a{
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--gold)}
+/* LAYOUT */
+.wrap{width:min(var(--max), calc(100% - 40px));margin:0 auto}
+section{scroll-margin-top:calc(var(--nav-h) + 16px)}
+.kicker{
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--ember);
+  font-weight:500;
+}
+.sec-title{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:clamp(28px, 4vw, 44px);
+  letter-spacing:.06em;
+  color:var(--gold);
+  line-height:1.15;
+}
+/* HERO */
+.hero{
+  position:relative;
+  min-height:calc(100svh - var(--nav-h));
+  display:flex;
+  align-items:center;
+  padding:48px 0 72px;
+  overflow:clip;
+}
+.hero-glow{
+  position:absolute;
+  width:min(720px, 90vw);
+  height:min(720px, 90vw);
+  right:-8%;
+  top:50%;
+  transform:translateY(-50%);
+  background:radial-gradient(circle, rgba(232,120,34,.34) 0%, rgba(143,80,45,.14) 38%, transparent 70%);
+  pointer-events:none;
+  z-index:0;
+  animation:ember 14s ease-in-out infinite;
+}
+@keyframes ember{
+  0%,100%{opacity:.7;transform:translateY(-50%) scale(1)}
+  50%{opacity:1;transform:translateY(-50%) scale(1.07)}
+}
+.hero-grid{
+  position:relative;z-index:1;
+  display:grid;
+  gap:40px;
+  align-items:center;
+}
+.hero-copy .kicker{margin-bottom:18px}
+.hero h1{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:clamp(40px, 9vw, 92px);
+  line-height:.95;
+  letter-spacing:.04em;
+  color:var(--gold-soft);
+  max-width:14ch;
+}
+.hero h1 span{display:block}
+.hero-artist{
+  margin-top:18px;
+  font-size:13px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.hero-lead{
+  margin-top:22px;
+  max-width:36ch;
+  color:var(--muted);
+  font-weight:300;
+  font-size:16px;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;
+  padding:0 22px;
+  border:1px solid var(--ember);
+  background:var(--ember);
+  color:#140C08;
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:500;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.btn:hover,.btn:focus-visible{background:var(--ember-hot);border-color:var(--ember-hot)}
+.btn-ghost{
+  background:transparent;
+  color:var(--gold);
+  border-color:rgba(240,192,132,.4);
+}
+.btn-ghost:hover,.btn-ghost:focus-visible{
+  background:transparent;
+  color:#fff;
+  border-color:var(--gold);
+}
+.cover-wrap{
+  position:relative;
+  width:min(100%, 640px);
+  margin:0 auto;
+  justify-self:center;
+}
+.cover-wrap img{
+  width:100%;
+  max-width:640px;
+  aspect-ratio:1/1;
+  object-fit:contain;
+  box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 60px rgba(232,120,34,.18);
+}
+/* BIO */
+.bio{
+  background:var(--bg-2);
+  padding:88px 0;
+  border-top:1px solid var(--line);
+}
+.bio-grid{
+  display:grid;
+  gap:40px;
+  align-items:center;
+}
+.bio-text .sec-title{margin:10px 0 22px}
+.bio-text p{color:var(--muted);font-weight:300;font-size:17px;max-width:52ch}
+.bio-text p + p{margin-top:16px}
+.bio-note{margin-top:20px;font-size:13px;color:var(--muted-2);letter-spacing:.04em}
+.detail{
+  width:min(100%, 420px);
+  height:400px;
+  margin:0 auto;
+  overflow:hidden;
+  background:#0A0807;
+}
+.detail img{
+  width:780px;
+  max-width:none;
+  height:780px;
+  object-fit:none;
+  object-position:-140px -200px;
+}
+/* MUSIC */
+.music{padding:88px 0;background:var(--bg)}
+.music-head{margin-bottom:36px}
+.music-head .sec-title{margin-top:10px}
+.music-layout{
+  display:grid;
+  gap:28px;
+}
+.tracks{
+  background:var(--surface);
+  border:1px solid var(--line);
+  padding:8px 0;
+}
+.track{
+  display:grid;
+  grid-template-columns:36px 1fr auto;
+  gap:12px;
+  align-items:center;
+  padding:12px 18px;
+  border-bottom:1px solid rgba(44,36,28,.8);
+}
+.track:last-child{border-bottom:0}
+.track-num{color:var(--muted-2);font-size:12px;letter-spacing:.08em}
+.track-name{font-size:15px;font-weight:400}
+.track-time{color:var(--muted-2);font-size:12px;font-variant-numeric:tabular-nums}
+.players{display:grid;gap:14px}
+.player{
+  border:1px solid var(--line);
+  background:var(--surface);
+  padding:16px 16px 14px;
+}
+.player-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.play-btn{
+  width:42px;height:42px;flex:0 0 42px;
+  border-radius:50%;
+  border:0;
+  display:grid;place-items:center;
+}
+.play-btn svg{width:16px;height:16px;margin-left:2px}
+.player.spotify .play-btn{background:var(--spot);color:#05140a}
+.player.apple .play-btn{background:var(--apple);color:#fff;border-radius:10px}
+.player-meta{min-width:0}
+.player-service{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2)}
+.player-title{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar{
+  height:4px;border-radius:2px;background:#2A221C;overflow:hidden;margin:10px 0 8px;
+}
+.bar > span{display:block;height:100%;width:28%;background:currentColor}
+.player.spotify{color:var(--spot)}
+.player.apple{color:var(--apple)}
+.player-times{display:flex;justify-content:space-between;font-size:11px;color:var(--muted-2)}
+.yt{
+  position:relative;
+  aspect-ratio:16/9;
+  background:#0A0807;
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+.yt img{
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center 30%;
+  opacity:.72;
+  filter:saturate(.9);
+}
+.yt-play{
+  position:absolute;inset:0;
+  display:grid;place-items:center;
+}
+.yt-play span{
+  width:64px;height:44px;
+  background:#FF0000;
+  border-radius:10px;
+  display:grid;place-items:center;
+  color:#fff;
+}
+.yt-play svg{width:18px;height:18px;margin-left:2px}
+.yt-label{
+  position:absolute;left:12px;bottom:10px;
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:#fff;
+  background:rgba(0,0,0,.5);
+  padding:4px 8px;
+}
+/* SHOP */
+.shop{padding:88px 0;background:var(--bg-2);border-top:1px solid var(--line)}
+.shop-head{margin-bottom:36px}
+.shop-head .sec-title{margin-top:10px}
+.shop-grid{display:grid;gap:22px}
+.product{
+  background:#090807;
+  border:1px solid var(--line);
+}
+.product img{
+  width:100%;
+  max-width:780px;
+  margin:0 auto;
+  height:auto;
+}
+.product figcaption{padding:18px 18px 20px}
+.product h3{font-size:16px;font-weight:500;margin-bottom:4px}
+.product p{color:var(--muted);font-size:13px;font-weight:300}
+.product .price{margin-top:12px;color:var(--gold);letter-spacing:.08em;font-size:13px}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.socials a{
+  display:inline-flex;align-items:center;gap:8px;
+  min-height:40px;
+  padding:0 14px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.socials a:hover,.socials a:focus-visible{color:var(--gold);border-color:rgba(240,192,132,.45)}
+.socials svg{width:14px;height:14px}
+/* TOUR */
+.tour{padding:88px 0;background:var(--bg)}
+.tour-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}
+.tour-head .sec-title{margin-top:10px}
+.shows{border-top:1px solid var(--line)}
+.tour-note{margin:16px 0 0;font-size:12px;color:var(--muted-2);letter-spacing:.04em;font-weight:300}
+.show{
+  display:grid;
+  gap:6px 16px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+  align-items:center;
+}
+.show-date{font-family:var(--display);color:var(--gold);letter-spacing:.08em;font-size:14px}
+.show-city{font-size:16px}
+.show-venue{color:var(--muted);font-size:13px;font-weight:300}
+.show a{
+  justify-self:start;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ember);
+  border-bottom:1px solid transparent;
+  padding:6px 0;
+}
+.show a:hover,.show a:focus-visible{border-bottom-color:var(--ember)}
+/* LISTEN / SIGNUP */
+.signup{
+  padding:72px 0;
+  background:linear-gradient(180deg, #120C08 0%, #0C0908 100%);
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+.signup .sec-title{margin:10px 0 12px}
+.signup p{color:var(--muted);font-weight:300;max-width:42ch;margin:0 auto 24px}
+.signup form,.contact form{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.signup input[type=email]{
+  flex:1 1 240px;
+  max-width:360px;
+  min-height:44px;
+  padding:0 14px;
+  background:#0A0807;
+  border:1px solid var(--line);
+  color:var(--text);
+  outline:none;
+}
+.signup input:focus,.contact input:focus,.contact textarea:focus,.contact select:focus{
+  border-color:var(--gold);
+}
+/* CONTACT */
+.contact{padding:88px 0;background:var(--bg-2);border-top:1px solid var(--line)}
+.contact .sec-title{margin:10px 0 12px}
+.contact-lead{color:var(--muted);font-weight:300;max-width:48ch;margin-bottom:28px}
+.contact form{display:grid;gap:12px;max-width:640px;justify-content:stretch}
+.contact label{display:grid;gap:6px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:left}
+.contact input,.contact select,.contact textarea{
+  min-height:44px;
+  padding:10px 14px;
+  background:#0A0807;
+  border:1px solid var(--line);
+  color:var(--text);
+  outline:none;
+  width:100%;
+}
+.contact textarea{min-height:140px;resize:vertical;line-height:1.5}
+.contact .btn{justify-self:start;margin-top:6px}
+.form-row{display:grid;gap:12px}
+/* FOOTER */
+.foot{
+  padding:28px 0 32px;
+  border-top:1px solid var(--line);
+  background:#050403;
+  text-align:center;
+}
+.foot p{font-size:11px;letter-spacing:.08em;color:var(--muted-2)}
+.foot .sample{margin-top:8px;letter-spacing:.04em;font-size:11px;color:#5A524A}
+.foot .sample a{color:inherit;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.foot .sample a:hover,.foot .sample a:focus-visible{color:var(--gold)}
+/* RESPONSIVE */
+@media (max-width:799px){
+  .nav{
+    height:auto;
+    flex-direction:column;
+    justify-content:center;
+    gap:10px;
+    padding:14px 16px 12px;
+  }
+  .nav-links{gap:16px;flex-wrap:wrap;justify-content:center}
+  .nav-links a{font-size:11px;letter-spacing:.12em}
+  .hero{min-height:0;padding:36px 0 56px}
+}
+@media (min-width:800px){
+  .nav{padding:0 40px}
+  .wrap{width:min(var(--max), calc(100% - 80px))}
+  .hero-grid{grid-template-columns:1fr minmax(0,640px);gap:56px}
+  .hero{padding:40px 0 80px}
+  .bio-grid{grid-template-columns:minmax(0,1fr) 420px;gap:64px}
+  .music-layout{grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+  .shop-grid{grid-template-columns:1fr 1fr}
+  .show{grid-template-columns:140px 1fr auto;gap:16px}
+  .show a{justify-self:end}
+  .form-row{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-glow{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <a class="brand" href="#top">Edrik Vohl</a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#tour">Tour</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">The new album — out now</p>
+        <h1>After <span>the Fall</span></h1>
+        <p class="hero-artist">Edrik Vohl</p>
+        <p class="hero-lead">A cinematic record from the edge of a ruined city. Built for dark rooms and late volume.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#music">Listen now</a>
+          <a class="btn btn-ghost" href="#tour">Tour dates</a>
+        </div>
+      </div>
+      <div class="cover-wrap">
+        <img src="img/After-Humanity-Cover-PP1.jpg" width="780" height="780" alt="After the Fall album cover by Edrik Vohl, from the PremadePixels After Humanity artwork: a cracked stone face lit in ember orange against a dark city.">
+      </div>
+    </div>
+  </section>
+
+  <section class="bio" id="bio">
+    <div class="wrap bio-grid">
+      <div class="bio-text">
+        <p class="kicker">About</p>
+        <h2 class="sec-title">From the ruins up.</h2>
+        <p>Edrik Vohl writes from a rented warehouse on the edge of Rotterdam. After the Fall is his first full-length: part score, part ruin-song, cut over fourteen nights from cracked piano, low strings, and a vocal that never quite asks for mercy.</p>
+        <p>The record takes its world from a single image — a face breaking open in the last light of a city. What followed was a sequence of songs about what remains when the towers go dark.</p>
+        <p class="bio-note">Edrik Vohl is a fictional artist, created for this sample site.</p>
+      </div>
+      <div class="detail" aria-hidden="true">
+        <img src="img/After-Humanity-Cover-PP1.jpg" width="780" height="780" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="music" id="music">
+    <div class="wrap">
+      <div class="music-head">
+        <p class="kicker">Listen</p>
+        <h2 class="sec-title">After the Fall</h2>
+      </div>
+      <div class="music-layout">
+        <ol class="tracks">
+          <li class="track"><span class="track-num">01</span><span class="track-name">After the Fall</span><span class="track-time">4:12</span></li>
+          <li class="track"><span class="track-num">02</span><span class="track-name">Telling Me</span><span class="track-time">3:48</span></li>
+          <li class="track"><span class="track-num">03</span><span class="track-name">Take Me Down</span><span class="track-time">4:01</span></li>
+          <li class="track"><span class="track-num">04</span><span class="track-name">Inside Your Mind</span><span class="track-time">3:29</span></li>
+          <li class="track"><span class="track-num">05</span><span class="track-name">Ash Capital</span><span class="track-time">5:06</span></li>
+          <li class="track"><span class="track-num">06</span><span class="track-name">The Last Light</span><span class="track-time">4:44</span></li>
+          <li class="track"><span class="track-num">07</span><span class="track-name">Orange Hour</span><span class="track-time">3:57</span></li>
+          <li class="track"><span class="track-num">08</span><span class="track-name">No Road Back</span><span class="track-time">4:23</span></li>
+        </ol>
+        <div class="players">
+          <div class="player spotify" aria-label="Spotify player placeholder">
+            <div class="player-top">
+              <div class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="player-meta">
+                <div class="player-service">Spotify</div>
+                <div class="player-title">After the Fall — Edrik Vohl</div>
+              </div>
+            </div>
+            <div class="bar" aria-hidden="true"><span></span></div>
+            <div class="player-times"><span>1:08</span><span>4:12</span></div>
+          </div>
+          <div class="player apple" aria-label="Apple Music player placeholder">
+            <div class="player-top">
+              <div class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="player-meta">
+                <div class="player-service">Apple Music</div>
+                <div class="player-title">After the Fall — Edrik Vohl</div>
+              </div>
+            </div>
+            <div class="bar" aria-hidden="true"><span></span></div>
+            <div class="player-times"><span>1:08</span><span>4:12</span></div>
+          </div>
+          <div class="yt" aria-label="YouTube video placeholder">
+            <img src="img/After-Humanity-Cover-PP1.jpg" width="780" height="780" alt="">
+            <div class="yt-play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+            <div class="yt-label">YouTube · Official audio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="shop-head">
+        <p class="kicker">Store</p>
+        <h2 class="sec-title">The record, in hand.</h2>
+      </div>
+      <div class="shop-grid">
+        <figure class="product">
+          <img src="img/After-Humanity-Cover-PP2.jpg" width="780" height="520" alt="After the Fall on black vinyl, sleeve and disc, photographed on crumpled black plastic.">
+          <figcaption>
+            <h3>After the Fall — 12" vinyl</h3>
+            <p>Black vinyl in a printed sleeve. Fictional merch for this sample.</p>
+            <div class="price">$32 · Demo item, not for sale</div>
+          </figcaption>
+        </figure>
+        <figure class="product">
+          <img src="img/After-Humanity-Cover-PP3.jpg" width="780" height="520" alt="After the Fall vinyl sleeve styled with headphones, a loose record, and a cartridge on a dark desk.">
+          <figcaption>
+            <h3>Studio edition pack</h3>
+            <p>Sleeve, listening cut, and a folded lyric sheet.</p>
+            <div class="price">$45 · Demo item, not for sale</div>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="socials" aria-label="Social links">
+        <a href="#music" aria-label="Spotify (placeholder)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.62.62 0 0 1-.86.2c-2.35-1.44-5.3-1.76-8.78-.97a.62.62 0 1 1-.28-1.21c3.8-.87 7.05-.5 9.67 1.12.3.18.39.56.2.86zm1.22-2.72a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.16a.78.78 0 0 1-.45-1.49c3.64-1.1 8.16-.56 11.24 1.33.37.22.48.7.25 1.06zm.1-2.83C14.3 8.9 8.98 8.72 6.1 9.6a.93.93 0 1 1-.55-1.78c3.3-1.02 9.13-.8 12.72 1.34a.93.93 0 1 1-.95 1.6z"/></svg>
+          Spotify
+        </a>
+        <a href="#music" aria-label="Apple Music (placeholder)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3.2c-1.1.1-2.4.74-3.17 1.6-.7.78-1.3 1.95-1.07 3.1 1.2.05 2.45-.68 3.2-1.55.72-.83 1.27-2.02 1.04-3.15zM19.2 8.6c-1.9-1.13-4.3-.96-5.7.18-1.03.84-1.7.84-2.74 0-1.9-1.46-4.36-1.3-5.72.3-2.7 3.12-.7 7.86 1.22 10.5.93 1.28 2.04 2.7 3.5 2.64 1.4-.07 1.93-.9 3.62-.9 1.68 0 2.16.9 3.64.87 1.5-.02 2.45-1.3 3.37-2.6 1.07-1.5 1.5-2.96 1.53-3.03-.03-.02-2.92-1.12-2.95-4.44-.02-2.78 2.27-4.1 2.37-4.16-1.3-1.9-3.32-2.11-4.04-2.16z"/></svg>
+          Apple Music
+        </a>
+        <a href="#music" aria-label="YouTube (placeholder)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12.2s0-3.18-.4-4.58c-.22-.82-.86-1.46-1.68-1.68C19.52 5.5 12 5.5 12 5.5s-7.52 0-8.92.44c-.82.22-1.46.86-1.68 1.68C1 9.02 1 12.2 1 12.2s0 3.18.4 4.58c.22.82.86 1.46 1.68 1.68C4.48 18.9 12 18.9 12 18.9s7.52 0 8.92-.44c.82-.22 1.46-.86 1.68-1.68.4-1.4.4-4.58.4-4.58zM9.75 15.5v-6.6l6.3 3.3-6.3 3.3z"/></svg>
+          YouTube
+        </a>
+        <a href="#contact" aria-label="Instagram (placeholder)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="#contact" aria-label="X (placeholder)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.5 10.3 22 2h-2.3l-6.2 6.9L8.7 2H2l7.9 11.2L2 22h2.3l6.7-7.5L15.2 22H22l-7.5-11.7zm-2.4 2.6-.8-1.1L5 3.6h2.6l5.1 7.2.8 1.1 6.7 9.5h-2.6l-5.5-7.9z"/></svg>
+          X
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tour" id="tour">
+    <div class="wrap">
+      <div class="tour-head">
+        <div>
+          <p class="kicker">Shows</p>
+          <h2 class="sec-title">On the road.</h2>
+        </div>
+      </div>
+      <div class="shows">
+        <div class="show"><div class="show-date">Nov 28, 2026</div><div><div class="show-city">Rotterdam</div><div class="show-venue">The Kiln</div></div><a href="#contact">Tickets</a></div>
+        <div class="show"><div class="show-date">Dec 02, 2026</div><div><div class="show-city">Berlin</div><div class="show-venue">Hollow Hall</div></div><a href="#contact">Tickets</a></div>
+        <div class="show"><div class="show-date">Dec 06, 2026</div><div><div class="show-city">Prague</div><div class="show-venue">Black Lantern</div></div><a href="#contact">Tickets</a></div>
+        <div class="show"><div class="show-date">Dec 11, 2026</div><div><div class="show-city">London</div><div class="show-venue">Red Temper</div></div><a href="#contact">Tickets</a></div>
+        <div class="show"><div class="show-date">Jan 16, 2027</div><div><div class="show-city">Brooklyn</div><div class="show-venue">North Yard</div></div><a href="#contact">Tickets</a></div>
+        <div class="show"><div class="show-date">Jan 19, 2027</div><div><div class="show-city">Chicago</div><div class="show-venue">The Ember Room</div></div><a href="#contact">Tickets</a></div>
+        <div class="show"><div class="show-date">Jan 23, 2027</div><div><div class="show-city">Los Angeles</div><div class="show-venue">Lowlight</div></div><a href="#contact">Tickets</a></div>
+        <div class="show"><div class="show-date">Jan 28, 2027</div><div><div class="show-city">Mexico City</div><div class="show-venue">Sala Norte</div></div><a href="#contact">Tickets</a></div>
+      </div>
+      <p class="tour-note">Sample dates and venues, fictional.</p>
+    </div>
+  </section>
+
+  <section class="signup" id="list">
+    <div class="wrap">
+      <p class="kicker">The list</p>
+      <h2 class="sec-title">Stay close to the dark.</h2>
+      <p>New dates and the occasional studio note. A sample form — nothing is sent.</p>
+      <form action="#" method="post" onsubmit="return false">
+        <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email">
+        <button class="btn" type="submit">Join the list</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="kicker">Booking</p>
+      <h2 class="sec-title">Write to the desk.</h2>
+      <p class="contact-lead">For shows, press, and licensing. This form is a mockup and does not send a message.</p>
+      <form action="#" method="post" onsubmit="return false">
+        <div class="form-row">
+          <label>Name <input type="text" name="name" autocomplete="name"></label>
+          <label>Email <input type="email" name="email" autocomplete="email"></label>
+        </div>
+        <label>Inquiry
+          <select name="type">
+            <option>Booking</option>
+            <option>Press</option>
+            <option>Licensing</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Message <textarea name="message" rows="5"></textarea></label>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p>Edrik Vohl · After the Fall</p>
+    <p class="sample">Sample site by PremadePixels. Fictional artist. <a href="https://www.premadepixels.com/custom-album-cover-art">Get a cover + matching site</a></p>
+  </div>
+</footer>
+</body>
+</html>

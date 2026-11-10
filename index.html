@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample artist sites — PremadePixels</title>
+<meta name="description" content="Sample artist sites by PremadePixels. Each site is built from a PremadePixels cover. The artists are fictional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Poppins",system-ui,sans-serif;
+  background:#0B0B0C;
+  color:#F7F5F0;
+  min-height:100svh;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.55;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,p{margin:0}
+.wrap{width:min(960px, calc(100% - 40px));margin:0 auto}
+.page{display:flex;flex-direction:column;min-height:100svh;padding:36px 0 28px}
+.brand{
+  font-family:"Poppins",system-ui,sans-serif;
+  font-weight:500;
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#F7F5F0;
+}
+.brand span{color:#FF003C}
+header{margin-bottom:56px}
+h1{
+  font-family:"Bebas Neue",sans-serif;
+  font-weight:400;
+  font-size:clamp(42px, 8vw, 72px);
+  letter-spacing:.04em;
+  line-height:.9;
+  margin:18px 0 16px;
+}
+.lead{
+  max-width:36ch;
+  font-weight:300;
+  font-size:15px;
+  color:rgba(247,245,240,.72);
+}
+.cards{
+  display:grid;
+  gap:22px;
+  margin-bottom:56px;
+}
+.card{
+  display:block;
+  background:#111112;
+  border:1px solid rgba(247,245,240,.1);
+  transition:border-color .2s;
+}
+.card:hover,.card:focus-visible{border-color:#FF003C}
+.card img{
+  width:100%;
+  max-width:480px;
+  aspect-ratio:1/1;
+  object-fit:contain;
+  background:#0B0B0C;
+}
+.card-body{padding:18px 18px 20px}
+.card .kicker{
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#FF003C;
+  font-weight:500;
+  margin-bottom:6px;
+}
+.card h2{
+  margin:0 0 4px;
+  font-family:"Bebas Neue",sans-serif;
+  font-weight:400;
+  font-size:28px;
+  letter-spacing:.04em;
+  line-height:1;
+}
+.card .sub{
+  font-size:13px;
+  font-weight:300;
+  color:rgba(247,245,240,.62);
+}
+.cta{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:#F7F5F0;
+  border-bottom:1px solid #FF003C;
+  padding-bottom:4px;
+}
+.cta:hover,.cta:focus-visible{color:#FF003C}
+footer{
+  margin-top:auto;
+  padding-top:36px;
+  border-top:1px solid rgba(247,245,240,.1);
+  font-size:11px;
+  letter-spacing:.06em;
+  color:rgba(247,245,240,.45);
+}
+@media (min-width:800px){
+  .page{padding:48px 0 36px}
+  .wrap{width:min(960px, calc(100% - 80px))}
+  .cards{grid-template-columns:1fr 1fr;gap:28px}
+  .card img{max-width:100%}
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrap">
+      <header>
+        <div class="brand">Premade<span>Pixels</span></div>
+        <h1>Sample artist sites</h1>
+        <p class="lead">Two one-page samples, each built from a PremadePixels cover. The artists are fictional.</p>
+      </header>
+      <div class="cards">
+        <a class="card" href="edrik-vohl/">
+          <img src="edrik-vohl/img/After-Humanity-Cover-PP1.jpg" width="780" height="780" alt="After the Fall cover, used on the Edrik Vohl sample site.">
+          <div class="card-body">
+            <div class="kicker">Dark cinematic</div>
+            <h2>Edrik Vohl</h2>
+            <p class="sub">After the Fall</p>
+          </div>
+        </a>
+        <a class="card" href="ione-merroway/">
+          <img src="ione-merroway/img/Rooted-In-Him-Cover-PP1.jpg" width="780" height="780" alt="Rooted In Him cover, used on the Ione Merroway sample site.">
+          <div class="card-body">
+            <div class="kicker">Gospel</div>
+            <h2>Ione Merroway</h2>
+            <p class="sub">Rooted In Him</p>
+          </div>
+        </a>
+      </div>
+      <p><a class="cta" href="https://www.premadepixels.com/custom-album-cover-art">Get a cover + matching site</a></p>
+      <footer>PremadePixels · Sample sites</footer>
+    </div>
+  </div>
+</body>
+</html>
